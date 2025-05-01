@@ -9,10 +9,13 @@ WeatherAPI::WeatherAPI(QObject *parent) : QObject(parent) {
 }
 
 void WeatherAPI::fetchWeather() {
-    QString apiKey = "b40b40a2ae0c40f0937155710253004";
-    QString city = "London";
     QUrl url("http://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=" + city + "&aqi=no");
     manager->get(QNetworkRequest(url));
+}
+
+void WeatherAPI::setCity(QString &newCity)
+{
+    city = newCity;
 }
 
 void WeatherAPI::onReply(QNetworkReply *reply) {
@@ -30,3 +33,4 @@ void WeatherAPI::onReply(QNetworkReply *reply) {
     }
     reply->deleteLater();
 }
+

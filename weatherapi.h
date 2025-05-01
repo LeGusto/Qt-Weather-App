@@ -11,6 +11,7 @@ public:
 public:
     explicit WeatherAPI(QObject *parent = nullptr);  // Constructor
     void fetchWeather();  // Public method to trigger API request
+    void setCity(QString &newCity);
 
 signals:
     void weatherUpdated(const QString &location, const QString &temp);  // Signal emitted when data is ready
@@ -20,6 +21,8 @@ private slots:
 
 private:
     QNetworkAccessManager *manager;  // Manages network requests
+    QString city = "London";
+    QString apiKey = "b40b40a2ae0c40f0937155710253004";
 };
 
 #endif

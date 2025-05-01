@@ -20,5 +20,7 @@ void MainWindow::onWeatherUpdated(const QString &location, const QString &temp) 
 }
 
 void MainWindow::onRefreshClicked() {
+    QString currCity = ui->locSelect->currentText();
+    weatherApi->setCity(currCity);
     weatherApi->fetchWeather();
 }
