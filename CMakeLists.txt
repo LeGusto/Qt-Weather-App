@@ -25,9 +25,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         weatherapi.h
         weatherapi.cpp
-        env.h env.cpp
-        env.h env.cpp
-
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Weather-App APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
