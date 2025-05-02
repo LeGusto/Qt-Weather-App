@@ -7,22 +7,27 @@
 
 class WeatherAPI : public QObject {
 public:
-    Q_OBJECT  // Required for Qt's signals/slots mechanism
+    Q_OBJECT
 public:
-    explicit WeatherAPI(QObject *parent = nullptr);  // Constructor
-    void fetchWeather();  // Public method to trigger API request
+    explicit WeatherAPI(QObject *parent = nullptr);
+    void fetchCurrent();
+    void fetchForecast();
     void setCity(QString &newCity);
+    void setWillRain(QString &willRain);
 
 signals:
-    void weatherUpdated(const QString &location, const QString &temp);  // Signal emitted when data is ready
+    void weatherCurrentUpdated(const QString &location, const QString &temp);
+    void weatherForecastUpdated(const QString &willRain);
 
 private slots:
-    void onReply(QNetworkReply *reply);  // Slot to handle API response
+    void onCurrentReply(QNetworkReply *reply);
+    void onForecastReply(QNetworkReply *reply);
 
 private:
-    QNetworkAccessManager *manager;  // Manages network requests
+    QNetworkAccessManager *manager;
     QString city = "London";
     QString apiKey = "b40b40a2ae0c40f0937155710253004";
+    QString willRain = "Unknown";
 };
 
 #endif

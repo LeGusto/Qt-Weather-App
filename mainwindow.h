@@ -12,7 +12,8 @@ public:
     ~MainWindow();
 
 private slots:
-    void onWeatherUpdated(const QString &location, const QString &temp);
+    void onCurrentUpdated(const QString &location, const QString &temp);
+    void onForecastUpdated(const QString &rainChance);
     void onRefreshClicked();
 
 private:
