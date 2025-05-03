@@ -27,7 +27,7 @@
      <string>Refresh</string>
     </property>
    </widget>
-   <widget class="QLabel" name="locationLabel">
+   <widget class="QLabel" name="tempName">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -109,7 +109,7 @@
      <string>Weather App</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="rainName">
     <property name="geometry">
      <rect>
       <x>310</x>

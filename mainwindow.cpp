@@ -17,7 +17,6 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::onCurrentUpdated(const QString &location, const QString &temp) {
-    ui->locationLabel->setText(location);
     ui->tempLabel->setText(temp);
 }
 
